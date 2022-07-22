@@ -14,6 +14,8 @@ $font-primary:'Inter', sans-serif;
 $font-secondary: 'Istok Web', sans-serif;
 $font-tetriary: 'Jura', sans-serif;
 $bg-clr:var(--bgColor);
+$background : rgba(232, 195, 127, 0.084);
+
 
 
 
@@ -60,7 +62,7 @@ $desktop: 1400px;
 
 
 .front-page-hero {
-    background-color: #FCFBFF;
+    background-color: $background;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -658,7 +660,7 @@ $desktop: 1400px;
                     }
 
                     p{
-                        font-size: 1.3rem;
+                        font-size: 1.2rem;
                         font-weight: 500;
                         
                         @include phone () {
@@ -776,6 +778,24 @@ $desktop: 1400px;
     @include phone () {
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+}
+
+.front-page-toolshed {
+    height: 100vh;
+    width: 100%;
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .toolshed-wrapper {
+        width: 75%;
+        height: 70%;
+        background-color: #000000;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 }
