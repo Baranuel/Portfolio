@@ -1,0 +1,781 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$font-primary:'Inter', sans-serif;
+$font-secondary: 'Istok Web', sans-serif;
+$font-tetriary: 'Jura', sans-serif;
+$bg-clr:var(--bgColor);
+
+
+
+:root{
+--bgColor:"#222222";
+--colsCount: 10;
+--rowsCount: 10
+}
+
+
+$phone: 540px;
+$small-tablet: 875px;
+$tablet: 1184px;
+$desktop: 1400px;
+
+@mixin desktop {
+
+  @media (max-width: #{$desktop - 1px}) {
+    @content;
+  };
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet - 1px}) {
+        @content;
+      }
+}
+
+@mixin small-tablet {
+
+    @media (max-width: #{$small-tablet - 1px}) {
+        @content;
+      }
+}
+
+@mixin phone {
+
+    @media (max-width: #{$phone - 1px}) {
+        @content;
+      }
+}
+
+
+
+
+.front-page-hero {
+    background-color: #FCFBFF;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    @include phone() {
+
+        height: unset;
+    }
+
+
+    .front-page-hero-introduction{
+        display: flex;
+        height: 75%;
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+
+        @include desktop(){
+            height: 50%;
+            width: 75%;
+        };
+
+        @include tablet() {
+            flex-direction: column;
+        }
+
+        @include small-tablet() {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .introduction-text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1;
+
+            @include desktop(){
+            }
+
+            @include tablet() {
+                width: 100%;
+            }
+    
+
+            h3{
+                font-family: 'Istok Web', sans-serif;
+                letter-spacing: .3rem;
+                color: rgb(232, 185, 115);
+                font-size: clamp(1rem, 2vw, 1.6rem)
+            }
+
+            h1{
+                font-family: 'Inter', sans-serif;
+                color: #4C3A51;
+                line-height: 6rem;
+                font-size: clamp(5rem, 7vw, 7rem);
+                margin: 1rem 0 ;
+
+                @include desktop(){
+                    line-height: 4.5rem;
+                }
+            }
+
+            p{
+                margin:1rem 0;
+                font-family: 'Inter', sans-serif;
+                font-size:1.3rem;
+                line-height: 1.6rem;
+                font-weight: 500;
+                max-width: 40ch
+            }
+
+            button {
+                margin: 1rem 0 ;
+                width: 50%;
+
+                @include phone(){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+    .introduction-images {
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        height: 75%;
+        width: 50%;
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows: 50% 50%;
+        gap: 0.05rem;
+
+        @include desktop(){
+
+        }
+
+        @include tablet() {
+            width: 100%;
+            height: 100%;
+            gap: 0.5rem;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows: 1fr
+        }
+
+        @include small-tablet() {
+            grid-template-columns:1fr 1fr ;
+            grid-template-rows: 1fr, 1fr;
+            margin-top: 2rem;
+
+
+
+        }
+
+        .hero-image {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+
+            @include desktop(){
+                padding: 2rem;
+            }
+
+            @include tablet( ){
+                background-color: rgba(76, 58, 81, 0.1);
+            }
+
+            img{
+                width: 30%;
+                height: auto;
+            }
+
+            p{
+                margin-top: 1rem;
+                font-size: clamp(0.8rem, 2vw, 1.3rem);
+                font-family: 'Istok Web', sans-serif;
+                font-weight: bold;
+                color: #4C3A51;
+                letter-spacing: 0.1rem;
+            }
+        };
+
+        .hero-image-border{
+            border: 3px solid #4C3A51;
+            background-color: rgb(107, 23, 130,0.1);
+        }
+
+        .hero-image-bg{
+            background-color: rgb(76, 58, 81,0.1);
+        }
+    }
+
+}
+
+//About section front page
+
+.front-page-about{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+    @include desktop(){
+        flex-direction: column;
+    }
+    @include phone() {
+
+    }
+
+    .display-about-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include desktop() {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .about-get-to-know-me{
+        z-index: 3;
+        width: 30%;
+        font-family: $font-tetriary;
+        pointer-events: none;
+        padding: 2.5rem;
+
+        @include desktop(){
+            width: 100%;
+            min-height: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        @include phone() {
+            height: 40%;
+        }
+
+        h1{
+            font-family: $font-primary;
+            font-weight: 700;
+            font-size: clamp(1.6rem,6vw,3rem);
+            color: rgb(68, 64, 69);
+            margin-bottom: 0.5rem;
+            text-shadow:  0px 1px 1px rgba(0, 0, 0, 1);
+        }
+
+        p{
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+
+            @include desktop(){
+                display: none;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            
+            @include desktop(){
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            @include small-tablet(){
+                flex-wrap: wrap;
+                flex-direction:column
+            }
+
+            li  {
+                pointer-events: all;
+                cursor: pointer;
+                list-style-type: none;
+                font-family: $font-tetriary;
+                font-size: clamp(1.5rem, 3vw ,2rem);
+                font-weight: 600;
+                margin: 0.4rem 0;
+                position: relative;
+                transition: all 300ms ease;
+
+                @include desktop() {
+                     margin: 1rem;
+                }
+
+                @include tablet(){
+                    margin: 0.2rem 1rem;
+                }
+
+
+                &::before{
+                    content:"";
+                    position: absolute;
+                    opacity: 0;
+                    transform: translateX(-50%);
+                    top: 50%;
+                    left: -70px;
+                    height: 5%;
+                    width: 50px;
+                    background-color: #4C3A51;
+                    transition: all 300ms ease-in-out;
+                }
+                
+                &:hover {
+                    border-radius: 10px;
+
+                    &::before {
+                        opacity: 1;
+                        transform: translateX(0%);
+
+                        @include desktop(){
+                            display: none
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .active{
+        background-color: var(--bgColor);
+        color: white;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        border-radius: 10px;
+        // box-shadow: -1px 1px 0px 1px rgba(21, 16, 22, 0.7),
+        //     inset 0px -1px 2px 4px rgba(0, 0, 0, 0.6);
+        box-shadow: 5px 6px 0px 2px rgba(0, 0, 0, 1);
+        border: 3px solid black;
+
+        &::before{
+            content:"";
+            position: absolute;
+            top: 50%;
+            left: -70px;
+            height: 5%;
+            width: 50px;
+            background-color: #4C3A51;
+            
+        @include desktop(){
+            display: none;
+        }
+        }
+
+    }
+
+
+    .grid-bg {
+        width: 100%;
+        height: 150vh;
+        position: absolute;
+        top: 0;
+        display: grid;
+        z-index: 0;
+        grid-template-columns: repeat(var(--colsCount),1fr);
+        grid-template-rows: repeat(var(--rowsCount),1fr)
+    }
+
+    .tile{
+        background-color: white;
+    }
+
+    .display-selection{
+        pointer-events: none;
+        border-radius: 50%;
+        width: 30%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2.5rem;
+        @include desktop(){
+            order: -1;
+
+        }
+
+        @include phone(){
+            height: unset;
+            width: 100%;
+        }
+        // box-shadow: 0px 0px 10px 5px rgb(76, 58, 81,0.1);
+
+        .display-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 2rem;
+
+            @include phone(){
+                margin-top:5rem
+            }
+        };
+
+        img{
+            width: 25%;
+        }
+
+        h2{
+            font-family: $font-secondary;
+            margin: 0.5rem 0;
+            font-size:clamp(1.5rem, 2.5vw, 2.5rem);
+            font-weight: 800;
+            color: #241c27;
+        }
+        
+        p{
+            color: #2f2f30;
+            text-align: center;
+            font-size:clamp(1rem, 2.2vw, 1.5rem);
+            padding: 0.25rem 2rem;
+            font-weight: bold;
+            font-family: $font-tetriary;
+            width: 30ch;
+
+            
+        @include phone(){
+            font-size: 1.1rem;
+        }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            width: clamp(40%, 42% ,45%);
+            height: 70%;
+            border-radius: 50%;
+            z-index: 0;
+            background-color: rgb(76, 58, 81,0.01);
+            box-shadow: 0px 1px 20px 2px rgb(76, 58, 81,0.1);
+        }
+
+        @include desktop(){
+
+            img {
+                width: 20%;
+            }
+
+            h2{
+                
+            }
+
+            &::before {
+                width: clamp(50%, 53% ,55%);
+                height: 55%;
+
+            }
+        }
+
+        @include small-tablet () {
+            &::before {
+                width: clamp(70%, 53% ,55%);
+                height: 49%;
+            }
+
+        @include phone () {
+
+            &::before {  
+                    width: clamp(80%, 53% ,55%);
+                    height: 40%;
+            
+            }
+        }
+
+        }
+    }
+}
+
+.front-page-work {
+    display: flex;
+
+    height: 100vh;
+    background-color: rgba(232, 195, 127, 0.084);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .work-section {
+        z-index: 1;
+
+        border: 3px solid black;
+        box-shadow: 5px 6px 0px 2px rgba(0, 0, 0, 1);
+        width: 75%;
+        border-radius: 10px;
+        height: 85%;
+        display: flex;
+        background-color: rgb(252, 245, 234);
+        transition: all 200ms ease ;
+
+        @include phone () {
+            width: 95%;
+            max-height: 80%;
+            background-color: rgb(252, 245, 234);
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+
+        .work-image {
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: rgba(252, 195, 115, 1);
+            margin: 1rem;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 3px solid black;
+            box-shadow: 5px 7px 0px 1px rgba(0, 0, 0, 1);
+            padding: 2rem;
+
+            @include phone() {
+                max-width: 100%;
+                min-height: 75%;
+                max-height: 75%;
+
+                padding: 1rem;
+                border: 3px solid black;
+                background-color: none;
+                justify-content: unset;
+
+            }
+
+            .work-cover {
+                position: absolute;
+                width: 100%;
+                border: 3px solid black;
+                height: 100%;
+                background-color:rgba(252, 195, 115, 1) ;
+                top:0;
+                left: 0;
+            }
+
+            img{
+                min-height: 45%;
+                max-height: 45%;
+                border-radius: 5px;
+                margin-bottom: 1rem;
+                min-width: 100%;
+                max-width: 100%;
+                border: 3px solid black;
+
+                @include phone() {
+                    min-height: 35%;
+                }
+            }
+
+            .project-details {
+                height: 50%;
+                font-family: $font-secondary;
+                position: relative;
+
+                @include phone() {
+                    height: unset;
+                }
+
+                .title {
+                    font-size: 1.5rem;
+                    margin: 0.5rem 0;
+                    font-weight: 700;
+                    color: #181818;
+
+                    @include phone() {  
+                        font-size: 1.5rem;
+                    }
+                }
+                .description {
+                    font-family: $font-primary;
+                    font-size: 1.2rem;
+                    padding: 1rem 0 ;
+                    font-weight: 500;
+                    color: #2d2c2c;
+                    min-height: 100px;
+                    max-height: 120px;
+                    margin: 0.5rem 0;
+
+                    @include phone() {  
+                        font-size: 1rem;
+                        padding: 0.5rem;
+                    }
+                }
+
+                hr{
+                    
+                }
+
+                .project-meta-data {
+                    border-radius: 5px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    font-family: $font-tetriary;    
+                    gap: 1rem;
+                    padding: 1rem;
+                    background-color: white;
+                    border: 3px solid black;
+                    height: 55%;
+
+                    @include phone() {  
+                        height: unset;
+                        display: none;
+                    }
+
+                    h3{
+                        font-size: 1.3rem;
+                        color: #000000;
+                        font-family: $font-secondary;
+
+                        @include phone() {  
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    p{
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                        
+                        @include phone () {
+                            font-size: 1rem;
+                        }
+
+                    }
+                    .technology {
+
+                        .technology-list {
+                            display: flex ;
+                            flex-wrap: wrap;
+
+                            p {
+                                margin: 0 0.25rem;
+                            }
+                        }
+                    }
+
+                    .role {
+
+                        .role-list {
+
+                            p {
+                                margin:0 0.25rem
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .projects-list {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 50%;
+            min-width: 50%;
+
+            @include phone() {
+                display: none;
+            }
+
+            h1{
+                margin: 0.5rem 1rem;
+            }
+
+            .projects-table {
+                
+                list-style-type: none;
+                margin: 0 1rem;
+
+                }
+
+                .project-list-item{
+                    border-radius: 5px;
+                    margin: 0.5rem 0.2rem;
+                    padding: 1.5rem;
+                    border: 3px solid black;
+                    position: relative;
+                    z-index: 1;
+                    color: #4C3A51;
+                    transition: all 200ms ease ;
+
+                    .fill {
+                        content:"";
+                        position: absolute;
+                        width: 0;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        background-color: rgb(252, 195, 115);;
+                        transition: width 350ms ease;
+                    }
+            
+
+                    &:hover{
+                        cursor: pointer;
+                        box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 1);
+
+                    }
+
+                    .number {
+                        font-weight: 700;
+                        font-size: 2rem;
+                        margin-right: 0.5rem;
+                        font-family: $font-primary
+                    }
+                    
+                    .title{
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        font-family: $font-primary
+                    }
+                }
+                .active{
+                    box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 1);
+                    padding: 2rem;
+                    color: black;
+                    
+                    .fill {
+                        width: 100%;
+                    }
+            }
+        }
+    }
+}
+
+.mobile-project-select {
+    display: none;
+
+    @include phone () {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

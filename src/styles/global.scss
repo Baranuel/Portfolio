@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+
+
+$font-primary:'Inter', sans-serif;
+$font-secondary: 'Istok Web', sans-serif;
+$font-tetriary: 'Jura', sans-serif;
+
+$bg-clr:var(--bgColor);
+
+
+
+$phone: 540px;
+$small-tablet: 875px;
+$tablet: 1184px;
+$desktop: 1400px;
+
+@mixin desktop {
+
+  @media (max-width: #{$desktop - 1px}) {
+    @content;
+  };
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet - 1px}) {
+        @content;
+      }
+}
+
+@mixin small-tablet {
+
+    @media (max-width: #{$small-tablet - 1px}) {
+        @content;
+      }
+}
+
+@mixin phone {
+
+    @media (max-width: #{$phone - 1px}) {
+        @content;
+      }
+}
+
+
+.primary-button{
+    padding: 1.3rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: $font-tetriary;
+    background-color: rgb(252, 195, 115);
+    color: white;
+    border-radius: 5px;
+    // box-shadow: -1px 1px 0px 1px rgb(76, 58, 81),
+    //         inset 0px -1px 3px 4px #7e571c;
+    box-shadow: 5px 6px 0px 2px rgba(0, 0, 0, 1);
+}
+
+.white-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include phone () {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.section-heading {
+        font-family: $font-primary;
+        font-weight: 700;
+        font-size: clamp(1.6rem,6vw,3rem);
+        color: #4C3A51;
+        margin-bottom: 0.5rem;
+        text-shadow:  0px 1px 1px rgba(0, 0, 0, 1);
+    
+}
+
+
+
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: rgb(241, 236, 243)
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(115, 108, 117);
+    border-radius: 5px;
+  }
+
+  .svg-image{
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1px;
+    stroke-dasharray: 2,2;
+    stroke-linejoin: round;
+  }
+
+  .link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: $font-tetriary;
+    background-color: rgb(97, 18, 119);
+    color: white;
+    border-radius: 5px;
+    // box-shadow: -1px 1px 0px 1px rgb(76, 58, 81),
+    //         inset 0px -1px 3px 4px #7e571c;
+    box-shadow: 5px 6px 0px 2px rgba(0, 0, 0, 1);
+
+    @include phone () {
+      font-size: 1rem;
+      box-shadow: 2px 3px 0px 2px rgba(0, 0, 0, 1);
+      padding: 0.5rem;
+    }
+  }
+
+  .case-link {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem ;
+    font-family: $font-secondary;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(59, 47, 80);
+    border-radius: 10px;
+
+    @include phone () {
+      font-size: 1rem;
+    }
+  }
+
+  .links-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+  }
+
+
+
+  .selection-button {
+    width: 35px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: rgb(250, 232, 206);
+    margin: 0.5rem;
+    align-self: end;
+    transition: all 500ms ease;
+
+  }
+  .active-selection {
+    background-color: rgb(97, 18, 119);
+    border: 4px solid black;
+    width: 50px;
+    height: 50px;
+
+}
+
+.section-lead-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(232, 195, 127, 0.084);
+  font-family: $font-secondary;
+  height: 40vh;
+}
