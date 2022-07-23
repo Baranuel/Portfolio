@@ -23,7 +23,6 @@ function SkillCard(props) {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
-          scrub:true,
           end:"top 60%"
         },
         ease:"ease",
@@ -42,7 +41,6 @@ function SkillCard(props) {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
-          scrub:true,
           end:"top 60%"
         },
         ease:"ease-in",
