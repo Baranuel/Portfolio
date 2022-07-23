@@ -808,7 +808,6 @@ $desktop: 1400px;
             align-items: center;
 
 
-
             .skill-card-cover {
                 min-height: 100%;
                 width: 45%;
@@ -825,6 +824,10 @@ $desktop: 1400px;
                 z-index: 2;
                 position: relative;
                 transition: all 400ms ease ;
+
+                h1{
+                    color: #2b222e;
+                }
 
                 img {
                     margin: 1rem 0;
@@ -847,6 +850,7 @@ $desktop: 1400px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+
 
                     h3 {
                         font-weight: 700;
@@ -871,6 +875,7 @@ $desktop: 1400px;
 
                         h4 {
                             font-family: $font-secondary;
+                            color: #4C3A51;
                         }
                     }
                 }
