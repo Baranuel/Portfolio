@@ -19,7 +19,10 @@ function Toolshed() {
 
 
     cardsCover.forEach(card => {
-      gsap.to(card, {
+      gsap.fromTo(card,{
+        xPercent: 30
+      },
+      {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
@@ -35,7 +38,10 @@ function Toolshed() {
 
     cardsContent.forEach(card => {
 
-      gsap.to(card, {
+      gsap.fromTo(card,{
+        xPercent: -70
+      },
+      {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
