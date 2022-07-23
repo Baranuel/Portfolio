@@ -15,6 +15,10 @@ function SkillCard(props) {
 
 
     cardsCover.forEach(card => {
+      gsap.from(card, {
+        x:"30%"
+      })
+
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
@@ -30,6 +34,10 @@ function SkillCard(props) {
     })
 
     cardsContent.forEach(card => {
+      gsap.from(card, {
+        x:"-70%",
+
+      })
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
@@ -37,9 +45,9 @@ function SkillCard(props) {
           scrub:true,
           end:"top 60%"
         },
-        ease:"ease",
+        ease:"ease-in",
         x:"-5%",
-        duration: 0.3
+
       })
     })
 
