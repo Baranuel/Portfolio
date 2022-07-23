@@ -29,6 +29,7 @@ $background : rgba(232, 195, 127, 0.084);
 $phone: 540px;
 $small-tablet: 875px;
 $tablet: 1184px;
+$small-desktop: 1280px;
 $desktop: 1400px;
 
 @mixin desktop {
@@ -47,6 +48,12 @@ $desktop: 1400px;
 @mixin small-tablet {
 
     @media (max-width: #{$small-tablet - 1px}) {
+        @content;
+      }
+}
+@mixin small-desktop {
+
+    @media (max-width: #{$small-desktop - 1px}) {
         @content;
       }
 }
@@ -93,8 +100,11 @@ $desktop: 1400px;
         }
 
         @include small-tablet() {
-            width: 100%;
+
             padding: 1rem;
+        }
+        @include phone () {
+            width: 100%;
         }
 
         .introduction-text {
@@ -164,6 +174,8 @@ $desktop: 1400px;
         gap: 0.05rem;
 
         @include desktop(){
+            gap: 2rem;
+            height: unset;
 
         }
 
@@ -200,10 +212,28 @@ $desktop: 1400px;
             @include tablet( ){
                 background-color: rgba(76, 58, 81, 0.1);
             }
+            @include small-tablet(){
+                height: 200px;
+            }
+            @include phone() {
+                height: 150px;
+            }
 
             img{
                 width: 30%;
                 height: auto;
+
+                @include desktop(){
+                    width:50%
+                }
+                
+                @include small-tablet () {
+                    width: 40%;
+                }
+                
+                @include phone() {
+                    width: 40%;
+                }
             }
 
             p{
@@ -238,7 +268,7 @@ $desktop: 1400px;
     position: relative;
 
 
-    @include desktop(){
+    @include tablet(){
         flex-direction: column;
     }
     @include phone() {
@@ -251,7 +281,7 @@ $desktop: 1400px;
         justify-content: space-evenly;
         align-items: center;
 
-        @include desktop() {
+        @include tablet() {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -264,7 +294,7 @@ $desktop: 1400px;
         pointer-events: none;
         padding: 2.5rem;
 
-        @include desktop(){
+        @include tablet(){
             width: 100%;
             min-height: 30%;
             display: flex;
@@ -301,7 +331,7 @@ $desktop: 1400px;
             flex-direction: column;
             align-items: flex-start;
             
-            @include desktop(){
+            @include tablet(){
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
@@ -323,7 +353,7 @@ $desktop: 1400px;
                 position: relative;
                 transition: all 300ms ease;
 
-                @include desktop() {
+                @include tablet() {
                      margin: 1rem;
                 }
 
@@ -352,7 +382,7 @@ $desktop: 1400px;
                         opacity: 1;
                         transform: translateX(0%);
 
-                        @include desktop(){
+                        @include tablet(){
                             display: none
                         }
                     }
@@ -415,7 +445,7 @@ $desktop: 1400px;
         justify-content: center;
         align-items: center;
         padding: 2.5rem;
-        @include desktop(){
+        @include tablet(){
             order: -1;
 
         }
@@ -516,7 +546,6 @@ $desktop: 1400px;
 
 .front-page-work {
     display: flex;
-
     height: 100vh;
     background-color: rgba(232, 195, 127, 0.084);
     display: flex;
@@ -536,12 +565,17 @@ $desktop: 1400px;
         background-color: rgb(252, 245, 234);
         transition: all 200ms ease ;
 
-        @include phone () {
-            width: 95%;
+        @include small-tablet() {
+            width: 80%;
             max-height: 80%;
             background-color: rgb(252, 245, 234);
             flex-direction: column;
+            align-items: center;
             justify-content: space-around;
+        }
+
+        @include phone(){
+            width: 95%;
         }
         
 
@@ -553,21 +587,24 @@ $desktop: 1400px;
             max-width: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
             border: 3px solid black;
             box-shadow: 5px 7px 0px 1px rgba(0, 0, 0, 1);
             padding: 2rem;
 
-            @include phone() {
-                max-width: 100%;
+
+            @include small-tablet() {
+                max-width: 75%;
                 min-height: 75%;
                 max-height: 75%;
-
                 padding: 1rem;
                 border: 3px solid black;
                 background-color: none;
                 justify-content: unset;
+            }
 
+            @include phone() {
+                max-width: 100%;
             }
 
             .work-cover {
@@ -581,16 +618,16 @@ $desktop: 1400px;
             }
 
             img{
-                min-height: 45%;
-                max-height: 45%;
+                min-height: 35%;
+                max-height: 40%;
                 border-radius: 5px;
                 margin-bottom: 1rem;
                 min-width: 100%;
                 max-width: 100%;
                 border: 3px solid black;
 
-                @include phone() {
-                    min-height: 35%;
+                @include small-tablet() {
+                    min-height: 55%;
                 }
             }
 
@@ -599,7 +636,7 @@ $desktop: 1400px;
                 font-family: $font-secondary;
                 position: relative;
 
-                @include phone() {
+                @include small-tablet() {
                     height: unset;
                 }
 
@@ -609,21 +646,20 @@ $desktop: 1400px;
                     font-weight: 700;
                     color: #181818;
 
-                    @include phone() {  
+                    @include small-tablet() {  
                         font-size: 1.5rem;
                     }
                 }
                 .description {
                     font-family: $font-primary;
-                    font-size: 1.2rem;
-                    padding: 1rem 0 ;
+                    font-size: clamp(1rem, 1.5vw, 1.2rem);
+                    padding: 0.5rem 0 ;
                     font-weight: 500;
                     color: #2d2c2c;
-                    min-height: 100px;
                     max-height: 120px;
                     margin: 0.5rem 0;
 
-                    @include phone() {  
+                    @include small-tablet() {  
                         font-size: 1rem;
                         padding: 0.5rem;
                     }
@@ -642,29 +678,32 @@ $desktop: 1400px;
                     padding: 1rem;
                     background-color: white;
                     border: 3px solid black;
-                    height: 55%;
 
-                    @include phone() {  
+                    @include small-desktop() {
+                        gap: 0.1rem
+                    }
+
+                    @include small-tablet() {  
                         height: unset;
                         display: none;
                     }
 
                     h3{
-                        font-size: 1.3rem;
+                        font-size: clamp(1rem, 1.5vw, 1.2rem);
                         color: #000000;
                         font-family: $font-secondary;
 
-                        @include phone() {  
-                            font-size: 1.1rem;
+                        @include small-tablet() {  
+                            font-size: clamp(1rem, 1.5vw, 1.3rem);
                         }
                     }
 
                     p{
-                        font-size: 1.2rem;
+                        font-size: clamp(1rem, 1.5vw, 1.1rem);
                         font-weight: 500;
                         
-                        @include phone () {
-                            font-size: 1rem;
+                        @include small-tablet () {
+                            font-size: clamp(1rem, 1.5vw, 1.3rem);
                         }
 
                     }
@@ -683,7 +722,7 @@ $desktop: 1400px;
                     .role {
 
                         .role-list {
-
+                            display: flex;
                             p {
                                 margin:0 0.25rem
                             }
@@ -702,7 +741,7 @@ $desktop: 1400px;
             max-width: 50%;
             min-width: 50%;
 
-            @include phone() {
+            @include small-tablet() {
                 display: none;
             }
 
@@ -711,11 +750,12 @@ $desktop: 1400px;
             }
 
             .projects-table {
-                
                 list-style-type: none;
                 margin: 0 1rem;
 
-                }
+                }                    h1{
+                        color: #4C3A51;
+                    }
 
                 .project-list-item{
                     border-radius: 5px;
@@ -726,6 +766,11 @@ $desktop: 1400px;
                     z-index: 1;
                     color: #4C3A51;
                     transition: all 200ms ease ;
+
+                    @include desktop () {
+                        padding: 1rem;
+                        font-size: 1rem;
+                    }
 
                     .fill {
                         content:"";
@@ -754,15 +799,20 @@ $desktop: 1400px;
                     }
                     
                     .title{
-                        font-size: 1.8rem;
+                        font-size: clamp(1rem, 2vw, 1.8rem) ;
                         font-weight: 700;
                         font-family: $font-primary
+
                     }
                 }
                 .active{
                     box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 1);
                     padding: 2rem;
                     color: black;
+
+                    @include desktop() {
+                        padding: 1.5rem;
+                    }
                     
                     .fill {
                         width: 100%;
@@ -775,7 +825,7 @@ $desktop: 1400px;
 .mobile-project-select {
     display: none;
 
-    @include phone () {
+    @include small-tablet () {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -826,7 +876,7 @@ $desktop: 1400px;
                 transition: all 400ms ease ;
 
                 h1{
-                    color: #2b222e;
+                    color: #1d181e;
                 }
 
                 img {

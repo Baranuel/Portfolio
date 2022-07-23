@@ -12,7 +12,7 @@ const projects = [
         description:"Re-design of an existing website for a photo studio located in Copenhagen, with the goal of separating 2 main target groups.",
         type:"Website",
         time_line: 4,
-        technology:["HTML", "CSS","Java-Script", "Vue.js"],
+        technology:["Holy-trinity", "Vue.js"],
         role:["UX/UI", "Front-end"],
         link:"https://modul-foto.vercel.app/#/",
         image:image
@@ -20,10 +20,10 @@ const projects = [
     {
         id:2,
         title:"Bobeh-blokhus",
-        description:"The Client is a care center, the goal of the redesign was to unify different housings, create updatable content through CMS,and also visually represent their values",
+        description:" the goal of the redesign was to unify different housings, create updatable content through CMS,and visually represent their values",
         type:"Website, CMS",
         time_line: 4,
-        technology:["HTML", "CSS","Java-Script", "Laravel-blade", "PHP","WordPress"],
+        technology:["Holy-trinity", "Laravel-blade", "PHP","WordPress"],
         role:["UX/UI", "Front-end"],
         image:bobeh
     },
@@ -33,7 +33,7 @@ const projects = [
         description:"A fun side project for practicing state and hooks in React, an elaborate todo-application",
         type:"Web-app",
         time_line: 1,
-        technology:["HTML", "CSS","Java-Script", "React"],
+        technology:["Holy-trinity", "React"],
         role:["Front-end"],
         link:"https://react-todo-brutalism.vercel.app/",
         image:todo
@@ -44,7 +44,7 @@ const projects = [
         description:"About the project and the client",
         type:"Website",
         time_line: 4,
-        technology:["HTML", "CSS","Java-Script"],
+        technology:["Holy-trinity"],
         role:["UX/UI", "Front-end"],
         link: "https://nuxtjs-chi-one-65.vercel.app/",
         image:movieDb
