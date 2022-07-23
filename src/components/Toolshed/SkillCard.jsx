@@ -11,7 +11,7 @@ function SkillCard(props) {
 
     const cardsCover = gsap.utils.toArray('.skill-card-cover')
     const cardsContent = gsap.utils.toArray('.skill-card-content')
-    
+    gsap.registerPlugin(ScrollTrigger);
 
 
     cardsCover.forEach(card => {
@@ -46,7 +46,7 @@ function SkillCard(props) {
 
   },[])
 
-  gsap.registerPlugin(ScrollTrigger);
+ 
 
   console.log(skills.design)
 
