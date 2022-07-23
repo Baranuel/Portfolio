@@ -34,10 +34,7 @@ function Toolshed() {
     })
 
     cardsContent.forEach(card => {
-      gsap.from(card, {
-        x:"-70%",
 
-      })
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
