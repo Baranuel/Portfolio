@@ -14,15 +14,16 @@ function SkillCard(props) {
     gsap.registerPlugin(ScrollTrigger);
 
 
-    cardsCover.forEach(card => {
-      gsap.from(card, {
-        translateX:"30%"
-      })
+    gsap.from(".skill-card-cover", {
+      translateX:"30%"
+    })
 
+    cardsCover.forEach(card => {
       gsap.to(card, {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
+          scrub:true,
           end:"top 60%"
         },
         ease:"ease",
@@ -41,6 +42,7 @@ function SkillCard(props) {
         scrollTrigger: {
           trigger: card,
           start:"top 60%",
+          scrub:true,
           end:"top 60%"
         },
         ease:"ease-in",
