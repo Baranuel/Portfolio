@@ -35,7 +35,7 @@ function SkillCard(props) {
 
     cardsContent.forEach(card => {
       gsap.from(card, {
-        x:"-76%",
+        x:"-70%",
 
       })
       gsap.to(card, {
