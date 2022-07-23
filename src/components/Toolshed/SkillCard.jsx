@@ -27,7 +27,7 @@ function SkillCard(props) {
           end:"top 60%"
         },
         ease:"ease",
-        x:0,
+        x:"0%",
         duration: 0.3,
         boxShadow: "4px 0 8px -2px rgb(24, 24, 24)"
       })
@@ -47,6 +47,7 @@ function SkillCard(props) {
         },
         ease:"ease-in",
         x:"-5%",
+
 
       })
     })
