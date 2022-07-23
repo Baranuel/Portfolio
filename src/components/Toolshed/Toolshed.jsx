@@ -30,7 +30,7 @@ function Toolshed() {
           end:"top 60%"
         },
         ease:"ease",
-        x:"0%",
+        xPercent:0,
         duration: 0.3,
         boxShadow: "4px 0 8px -2px rgb(24, 24, 24)"
       })
@@ -49,7 +49,7 @@ function Toolshed() {
           end:"top 60%"
         },
         ease:"ease-in",
-        x:"-5%",
+        xPercent:-5,
 
 
       })
