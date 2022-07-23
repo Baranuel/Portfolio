@@ -16,7 +16,7 @@ function SkillCard(props) {
 
     cardsCover.forEach(card => {
       gsap.from(card, {
-        x:"30%"
+        translateX:"30%"
       })
 
       gsap.to(card, {
