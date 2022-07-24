@@ -80,7 +80,7 @@ function About() {
         <GridBg selectedItem={selectedItem} />
         <div className="display-about-wrapper">
         <div className='about-get-to-know-me'>
-                <h1 >GET TO KNOW ME</h1>
+                <h1 >Get to know me</h1>
                 <p>Essentially I am about 4 things</p>
             <ul onClick={selectActiveItem}>
             {createListItems}

@@ -106,7 +106,7 @@ function Work() {
             </div>
 
             <div className='projects-list'>
-                <h1 className='section-heading'>SOME OF MY WORK</h1>
+                <h1 className='section-heading'>Some of my work</h1>
                 <ul className='projects-table'>
                     {createListItems}
                 </ul>
