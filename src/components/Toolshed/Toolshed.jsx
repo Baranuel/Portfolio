@@ -1,21 +1,24 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import gsap from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 import SkillCard from './SkillCard'
+import SkillCardMobile from './SkillCardMobile'
 
 import cardCover1 from '../../assets/images/card-cover-1.svg'
 import cardCover2 from '../../assets/images/card-cover-2.svg'
 
 import skills from '../../skills'
 
+
 function Toolshed() {
 
-  useEffect( () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const horizontalTranslate = () => {
 
     const cardsCover = gsap.utils.toArray('.skill-card-cover')
     const cardsContent = gsap.utils.toArray('.skill-card-content')
-    gsap.registerPlugin(ScrollTrigger);
 
 
     cardsCover.forEach(card => {
@@ -54,16 +57,115 @@ function Toolshed() {
 
       })
     })
+  }
 
 
+  const verticalTranslate = () => {
+      
+    const cardsCover = gsap.utils.toArray('.cover-mobile')
+    const cardsContent = gsap.utils.toArray('.content-mobile')
+
+
+    cardsCover.forEach(card => {
+      gsap.fromTo(card,{
+        yPercent: 50
+      },
+      {
+        scrollTrigger: {
+          trigger: card,
+          start:"top 20%",
+          scrub:true,
+          end:"top 20%",
+
+        },
+        yPercent: 35,
+        ease:"ease",
+        boxShadow: "4px 0 8px -2px rgb(24, 24, 24)"
+      })
+    })
+
+    cardsContent.forEach(card => {
+
+      gsap.fromTo(card,{
+        yPercent: -50
+      },
+      {
+        scrollTrigger: {
+          trigger: card,
+          start:"top 25%",
+          scrub:true,
+          end:"top 25%",
+          invalidateOnRefresh: true
+        },
+        yPercent: 25,
+        ease:"ease-in",
+        duration: 1.5
+
+
+      })
+    })
+  }
+
+
+  const clearTranslate = () => {
+      
+    const cardsCover = gsap.utils.toArray('.skill-card-cover')
+    const cardsContent = gsap.utils.toArray('.skill-card-content')
+
+
+    cardsCover.forEach(card => {
+      gsap.to(card,{
+        x: 0,
+        y:0
+      })
+    })
+
+    cardsContent.forEach(card => {
+
+      gsap.to(card,{
+        yPercent: 0,
+        xPercent:0
+      })
+    })
+  }
+
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  
+  useEffect( () => {
+
+    windowWidth > 900 ?
+    horizontalTranslate() :
+    verticalTranslate() 
+
+  },[windowWidth])
+
+
+
+  useEffect(() => {
+    const updateWidth = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener('resize',updateWidth )
   },[])
+
+  console.log(windowWidth)
 
 
   return (
     <div className='front-page-toolshed'>
         <div className='toolshed-wrapper'>
-        <SkillCard skills={skills.experienced} image={cardCover1} title={"Experienced"} />
-        <SkillCard skills={skills.learning} image={cardCover2} title={"Learning"} />
+          {windowWidth > 874 ?
+          <React.Fragment>
+          <SkillCard skills={skills.experienced} image={cardCover1} title={"Experienced"} />
+          <SkillCard skills={skills.learning} image={cardCover2} title={"Learning"} />
+          </React.Fragment>
+          :
+          <React.Fragment>
+          <SkillCardMobile skills={skills.experienced} image={cardCover1} title={"Experienced"}/>
+          <SkillCardMobile skills={skills.learning} image={cardCover2} title={"Learning"} />
+          </React.Fragment>
+          }
         </div>
     </div>
   )

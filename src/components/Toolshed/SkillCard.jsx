@@ -6,11 +6,6 @@ function SkillCard(props) {
   const {image, title, skills} = props
 
 
- 
-
-  console.log(skills.design)
-
-  
 
     const displayDevelopment = skills.development.map( skill => {
 
