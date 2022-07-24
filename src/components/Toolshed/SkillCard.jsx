@@ -9,7 +9,7 @@ function SkillCard(props) {
 
     const displayDevelopment = skills.development.map( skill => {
 
-      return  <li className='skill-list-item'>
+      return  <li key={skill.id} className='skill-list-item'>
                   <img src={skill.image} alt="" />
                   <h4>{skill.name}</h4>
               </li>
@@ -17,7 +17,7 @@ function SkillCard(props) {
     })
 
     const displayDesign = skills.design && skills.design.map ( skill => {
-      return <li className='skill-list-item'>
+      return <li key={skill.id} className='skill-list-item'>
                 <img src={skill.image} alt="" />
                 <h4>{skill.name}</h4>
             </li>

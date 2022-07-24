@@ -73,9 +73,9 @@ function Toolshed() {
       {
         scrollTrigger: {
           trigger: card,
-          start:"top 20%",
+          start:"top 40%",
           scrub:true,
-          end:"top 20%",
+          end:"top 40%",
 
         },
         yPercent: 35,
@@ -92,9 +92,9 @@ function Toolshed() {
       {
         scrollTrigger: {
           trigger: card,
-          start:"top 25%",
+          start:"top 45%",
           scrub:true,
-          end:"top 25%",
+          end:"top 45%",
           invalidateOnRefresh: true
         },
         yPercent: 25,
@@ -105,30 +105,6 @@ function Toolshed() {
       })
     })
   }
-
-
-  const clearTranslate = () => {
-      
-    const cardsCover = gsap.utils.toArray('.skill-card-cover')
-    const cardsContent = gsap.utils.toArray('.skill-card-content')
-
-
-    cardsCover.forEach(card => {
-      gsap.to(card,{
-        x: 0,
-        y:0
-      })
-    })
-
-    cardsContent.forEach(card => {
-
-      gsap.to(card,{
-        yPercent: 0,
-        xPercent:0
-      })
-    })
-  }
-
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   
