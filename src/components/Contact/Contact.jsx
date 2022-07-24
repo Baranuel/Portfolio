@@ -3,20 +3,29 @@ import emailjs from '@emailjs/browser'
 
 import orangeSvg from '../../assets/images/orange-svg.svg'
 import purpleSvg from '../../assets/images/purple-svg.svg'
+import Loader from '../Loader'
 
 function Contact() {
-    console.log(emailjs)
+   
     const [contactFormData, setContactFormData] = useState({})
-    const[submited, setSubmited] = useState(false)
+    const[isSubmited, setIsSubmited] = useState(false)
+    const [successfulSubmition, setSeccessfulSubmition] = useState(false)
+
+    const mountedStyle = { animation: "inAnimation 250ms ease-in" };
+    const unmountedStyle = {
+    animation: "outAnimation 270ms ease-out",
+    animationFillMode: "forwards"
+};
 
     const handleSubmit = e => {
         e.preventDefault()
-
+        setIsSubmited(true)
         emailjs.send((process.env.REACT_APP_SERVICE_ID), (process.env.REACT_APP_TEMPLATE_ID),contactFormData, (process.env.REACT_APP_USER_ID) )
                 .then((response) => {
                     console.log("SUCCESS", response);
                     setContactFormData({})
-
+                    setIsSubmited(false)
+                    setSeccessfulSubmition(true)
                     },
                     err => {
                         console.log("FAILED...", err)
@@ -58,6 +67,22 @@ function Contact() {
                 </div>
             </div>
             <div className="contact-form">
+                {isSubmited &&
+                    <div 
+                    className="loader-div"
+                    style={isSubmited ? mountedStyle : unmountedStyle}
+                    >
+                        <Loader /> 
+                    </div>
+                }
+                   { successfulSubmition &&
+                    <div 
+                    className="submited-div"
+                    style={isSubmited ? mountedStyle : unmountedStyle}
+                    >
+                       <h1>Thank you for your email</h1>
+                    </div>
+                        }
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="name" > Full Name </label>
                     <input onChange={handleChange} name="name" value={contactFormData.name} className='input-short' type="text" placeholder='Full Name' />
@@ -69,6 +94,7 @@ function Contact() {
                     <textarea  onChange={handleChange} name='message' value={contactFormData.message} className='input-area' />
                 <button className='submit-button primary-button'>Contact me</button>
                 </form>
+
             </div>
 
         </div>
