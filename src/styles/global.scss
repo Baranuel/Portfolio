@@ -195,14 +195,14 @@ $desktop: 1400px;
 
   .footer-wrapper {
     width: 80%;
-    font-family: $font-secondary;
+    font-family: $font-primary;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    h3{
+    p{
       margin: 0.5rem 0;
-      font-size: clamp(1rem, 4vw, 1.2rem);
+      font-size: clamp(0.875rem, 4vw, 1.2rem);
     }
 
     @include small-tablet(){

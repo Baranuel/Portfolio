@@ -14,8 +14,7 @@ function Footer() {
   return (
     <div className='footer' >
         <div className="footer-wrapper">
-            <h3>Samuel.baran98@gmail.com</h3>
-            <h3>Designed and built by Samuel Baran</h3>
+            <p><strong>Designed and built by Samuel Baran</strong></p>
             <div className='icons'>
             {contactIcons}
             </div>
