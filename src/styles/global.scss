@@ -169,7 +169,7 @@ $desktop: 1400px;
   height: 25vh;
 
   @include phone(){
-    height: 10vh;
+    height: 15vh;
   }
 
   h1 {
@@ -181,6 +181,47 @@ $desktop: 1400px;
 
   @include tablet () {
     padding-top: 10rem
+  }
+}
+
+
+.footer {
+  width: 100%;
+  height: 20vh;
+  background-color:  rgb(252, 195, 115);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-wrapper {
+    width: 80%;
+    font-family: $font-secondary;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3{
+      margin: 0.5rem 0;
+      font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    @include small-tablet(){
+      flex-direction: column;
+    }
+
+    .icons{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a{
+        margin: 0 0.5rem;
+      }
+
+      img {
+        width: 30px;
+      }
+    }
   }
 }
 
@@ -220,6 +261,10 @@ $desktop: 1400px;
   100% {
     transform: rotate(360deg);
   }
+}
+
+.hay {
+  color: #803DED;
 }
 
 

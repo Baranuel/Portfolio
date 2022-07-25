@@ -73,13 +73,12 @@ function Toolshed() {
       {
         scrollTrigger: {
           trigger: card,
-          start:"top 40%",
+          start:"top 10%",
           scrub:true,
-          end:"top 40%",
+          end:"top 10%",
 
         },
         yPercent: 35,
-        ease:"ease",
         boxShadow: "4px 0 8px -2px rgb(24, 24, 24)"
       })
     })
@@ -92,14 +91,11 @@ function Toolshed() {
       {
         scrollTrigger: {
           trigger: card,
-          start:"top 45%",
+          start:"top 25%",
           scrub:true,
-          end:"top 45%",
-          invalidateOnRefresh: true
+          end:"top 25%",
         },
         yPercent: 25,
-        ease:"ease-in",
-        duration: 1.5
 
 
       })
@@ -125,7 +121,7 @@ function Toolshed() {
     window.addEventListener('resize',updateWidth )
   },[])
 
-  console.log(windowWidth)
+
 
 
   return (

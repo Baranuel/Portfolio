@@ -1002,7 +1002,7 @@ $desktop: 1400px;
     background-color: rgba(232, 195, 127, 0.084);
     
     .contact-wrapper {
-
+        margin: 5rem 0;
         height: 80%;
         width: 75%;
         display: flex;
@@ -1019,6 +1019,7 @@ $desktop: 1400px;
 
         @include phone() {
             width: 95%;
+            height: unset
         }
 
         .contact-svg {
@@ -1046,7 +1047,7 @@ $desktop: 1400px;
                 p {
                     margin: 1rem 0;
                     font-family: $font-primary;
-                    font-size: clamp(1.1rem , 2vw, 1.5rem);
+                    font-size: clamp(1.1rem , 2vw, 1.3rem);
                 }
             }
 
@@ -1058,7 +1059,7 @@ $desktop: 1400px;
                 
 
                 img {
-                    width: 400px;
+                    width:calc(200px + 10vw);
                     
                     &:nth-child(1){
                         align-self: flex-start;
@@ -1087,9 +1088,21 @@ $desktop: 1400px;
                 width: 100%;
                 height: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 border-radius: 20px;
+                font-family: $font-secondary;
+                color: white;
+
+                img {
+                    width: 15%;
+                    margin: 1rem;
+                }
+
+                h1{
+                    font-size: clamp(1.5rem, 2vw, 2rem);
+                }
             }
 
             @include tablet(){
@@ -1100,6 +1113,10 @@ $desktop: 1400px;
                 padding: 4rem;
                 display: flex;
                 flex-direction: column;
+
+                @include phone(){
+                    padding: 2rem;
+                }
 
                 label {
                     font-family: $font-secondary;
@@ -1129,6 +1146,10 @@ $desktop: 1400px;
                     border-radius: 10px;
                     border: 1px solid black;
                     margin: 1rem 0;
+
+                    @include phone(){
+                        height: 100px;
+                    }
                 }
                 .submit-button {
                     padding: 1rem;

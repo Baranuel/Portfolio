@@ -10,6 +10,7 @@ import Work from './components/Work/Work';
 import SectionIntro from './components/SectionIntro';
 import Toolshed from './components/Toolshed/Toolshed';
 import Contact from './components/Contact/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Toolshed />
       <SectionIntro text={"Feel free to say hello :)"} />
       <Contact />
-
+      <Footer />
     </div>
   );
 }
