@@ -748,6 +748,32 @@ $desktop: 1400px;
             max-width: 50%;
             min-width: 50%;
 
+            .contact-icons {
+                display: flex;
+                justify-content: flex-end;
+                padding: 1rem;
+
+                a {
+                    padding: 0.5rem;
+                    background-color:rgb(97, 18, 119);
+                    margin: 0 0.25rem;
+                   
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 5px;
+                    align-items: center;
+                    box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 1);
+                    transition: all 100ms ease;
+
+                    &:hover{
+                        background-color: rgb(252, 195, 115);
+                    };
+                }
+                img {
+                    width: 25px
+                }
+            }
+
             @include small-tablet() {
                 display: none;
             }
@@ -785,7 +811,7 @@ $desktop: 1400px;
                         top: 0;
                         left: 0;
                         z-index: -1;
-                        background-color: rgb(252, 195, 115);;
+                        background-color: rgb(252, 195, 115);
                         transition: width 350ms ease;
                     }
             

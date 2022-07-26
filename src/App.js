@@ -11,10 +11,12 @@ import SectionIntro from './components/SectionIntro';
 import Toolshed from './components/Toolshed/Toolshed';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Hero />
       <About />
       <Work />

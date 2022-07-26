@@ -54,6 +54,30 @@ $desktop: 1400px;
     // box-shadow: -1px 1px 0px 1px rgb(76, 58, 81),
     //         inset 0px -1px 3px 4px #7e571c;
     box-shadow: 5px 6px 0px 2px rgba(0, 0, 0, 1);
+    transition: all 100ms ease;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 6px 6px 2px 2px rgb(0, 0, 0);
+ 
+    }
+    
+    &:active {
+      box-shadow: none;
+      transform: translate(3%,5%);
+    }
+}
+
+.navigation{
+  width: 75px;
+  height: 75px;
+
+  background-color: rgb(255, 250, 242);
+  border:5px solid black;
+  position: fixed;
+  z-index: 10;
+  top: 2rem;
+  right: 2rem;
 }
 
 .white-label {

@@ -6,6 +6,7 @@ import images from '../../images'
 import '../../App.scss'
 import '../../styles/global.scss'
 
+
 function Hero() {
 
 

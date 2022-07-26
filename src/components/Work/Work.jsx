@@ -5,11 +5,19 @@ import ProjectItem from './ProjectItem'
 import Selection from './Selection'
 import gsap from 'gsap'
 
+import github from '../../assets/images/contact-icons/github-white.svg'
+import facebook from '../../assets/images/contact-icons/facebook-white.svg'
+import linkedin from '../../assets/images/contact-icons/linkedin-white.svg'
+
 function Work() {
 
-    const [selectedProject, setSelectedProject] = useState({
+    const icons = [{link:"https://github.com/Baranuel", img: github}, {link:"https://www.facebook.com/samuel.baran", img: facebook},{link:"https://www.linkedin.com/in/samuel-baran-1706a9225/", img: linkedin}]
 
-    })
+    const contactIcons = icons.map( (icon, index) => {
+      return <a href={icon.link} target="blank" key={index}><img src={icon.img} alt="" /></a>
+  })
+
+    const [selectedProject, setSelectedProject] = useState({})
 
     useEffect( () => {
         setSelectedProject(projects[0])
@@ -76,7 +84,7 @@ function Work() {
                     <h2 className='title'>{selectedProject.title}</h2>
                     <div className='links-div'>
                      <a className='link' href={selectedProject.link} target="blank">Live preview</a>
-                    <a className='case-link' href=""> Case study</a>
+                    <a className='case-link' href="/"> Case study</a>
                     </div>
                     </div>
                     <p className='description'>{selectedProject.description}</p>
@@ -110,6 +118,9 @@ function Work() {
                 <ul className='projects-table'>
                     {createListItems}
                 </ul>
+                <div className="contact-icons">
+                  {contactIcons}
+                </div>
             </div>
             <div className='mobile-project-select'>
                         {createMobileSelection}
