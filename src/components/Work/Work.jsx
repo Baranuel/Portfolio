@@ -123,7 +123,7 @@ function Work() {
                 </div>
             </div>
             <div className='mobile-project-select'>
-                        {createMobileSelection}
+                    {createMobileSelection}
             </div>
         </div>
     </div>

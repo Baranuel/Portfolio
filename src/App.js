@@ -1,3 +1,5 @@
+import React, {useState, useEffect} from 'react';
+
 import './App.scss';
 
 //images
@@ -11,12 +13,24 @@ import SectionIntro from './components/SectionIntro';
 import Toolshed from './components/Toolshed/Toolshed';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer';
+import NavigationToggle from './components/NavigationToggle';
 import Navigation from './components/Navigation';
 
 function App() {
+
+  const[navIsOpen, setNavIsOpen] = useState(false)
+
+  const toggleNav = () => {
+    setNavIsOpen(prev => !prev)
+  }
+
+  
+
   return (
     <div className="App">
-      <Navigation />
+      <NavigationToggle toggle={toggleNav}  />
+      <Navigation  navIsOpen={navIsOpen} />
+
       <Hero />
       <About />
       <Work />
