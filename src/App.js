@@ -30,7 +30,6 @@ function App() {
     <div className="App">
       <NavigationToggle toggle={toggleNav}  />
       <Navigation  navIsOpen={navIsOpen} />
-
       <Hero />
       <About />
       <Work />

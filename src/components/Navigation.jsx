@@ -3,25 +3,30 @@ import React, {useState,useEffect} from 'react'
 import MenuGridBg from './MenuGridBg'
 import NavigationLink from './NavigationLink'
 
+import gsap from 'gsap'   
+
 function Navigation(props) {
 
-  
+    const [isMobile, setIsMobile] = useState(false)
     const {navIsOpen} = props
-
     const links = [{id:1,content:"About me", link:""},{id:2,content:"My Work", link:""},{id:3,content:"Skills", link:""},{id:4,content:"Contact", link:""},]
-    const [activeIndex, setActiveIndex]= useState(0)
-    const [hoveredLink, setHoveredLink] = useState(false)
 
-    const changeHover = id => {
-    links.map((item) => {
-         item.id === id && setHoveredLink(item)  
+    useEffect( () => {
+      window.innerWidth >= 900 ? setIsMobile(false) : setIsMobile(true)
+
+    },[])
+ 
+    useEffect( () => {
+      gsap.to('.menu-items', {
+        opacity:1,
+        delay:isMobile? 0.2 : 0.75,
+
       })
-    }
 
-   console.log(hoveredLink)
+    },[navIsOpen])
 
     const renderLinks = links.map((item, index) => {
-        return <NavigationLink item={item} key={index} />
+        return <NavigationLink isMobile={isMobile} navIsOpen={navIsOpen} item={item} key={index} />
     })
 
 

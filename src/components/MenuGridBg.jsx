@@ -18,9 +18,9 @@ function MenuGridBg(props) {
 
     const [count, setCount] = useState(-1)
 
-    const [columns, setColumns] = useState(Math.floor( document.documentElement.clientWidth/ 150))
+    const [columns, setColumns] = useState(Math.floor( document.documentElement.clientWidth/ 50))
 
-    const [rows, setRows] = useState(Math.floor( document.documentElement.clientHeight / 150))
+    const [rows, setRows] = useState(Math.floor( document.documentElement.clientHeight / 50))
 
 
 
@@ -30,8 +30,8 @@ function MenuGridBg(props) {
         document.documentElement.style.setProperty('--rowsCountMenu', rows)
 
         const updateSize  = (e) => {
-            setColumns(Math.floor( window.innerWidth / 150))
-            setRows(Math.floor( window.innerHeight / 150))
+            setColumns(Math.floor( window.innerWidth / 50))
+            setRows(Math.floor( window.innerHeight / 50))
         }
         
         window.addEventListener('resize', updateSize)
@@ -61,7 +61,7 @@ function MenuGridBg(props) {
         anime({
             targets: '.tile-menu',
             opacity: navIsOpen? 1 : 0,
-            delay: anime.stagger(100,{
+            delay: anime.stagger(20,{
                 grid: [columns, rows],
                 from:columns - 1
             })
