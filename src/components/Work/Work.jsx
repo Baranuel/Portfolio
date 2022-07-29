@@ -74,7 +74,7 @@ function Work() {
 
     
   return (
-    <div className='front-page-work'>
+    <div id="work"className='front-page-work'>
         <div className='work-section'>
             <div className='work-image'>
             <img className='project-image' src={selectedProject.image} alt="" />

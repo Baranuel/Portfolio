@@ -87,8 +87,8 @@ function Contact() {
     }
 
   return (
-    <div className='front-page-contact'>
-        <div className="contact-wrapper">
+    <div id="contact" className='front-page-contact'>
+        <div  className="contact-wrapper">
             <div className='contact-svg'>
                 <div className='contact-svg-text'>
                     <h3>Tell me <strong className='hay'> how are you </strong> doing</h3>

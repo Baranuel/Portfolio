@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <NavigationToggle toggle={toggleNav}  />
-      <Navigation  navIsOpen={navIsOpen} />
+      <Navigation toggle={toggleNav}   navIsOpen={navIsOpen} />
       <Hero />
       <About />
       <Work />

@@ -4,7 +4,7 @@ import { stagger } from 'animejs'
 
 function NavigationLink(props) {
 
-    const {item, navIsOpen, isMobile} = props
+    const {item, navIsOpen, isMobile, toggle} = props
     useEffect( () => {
 
         gsap.from('.menu-link', {
@@ -14,7 +14,7 @@ function NavigationLink(props) {
             x: 0,
             stagger: 0.2,
             opacity: 1,
-            delay: isMobile ? 0.4 : 1,
+            delay: isMobile ? 0.4 : 0.5,
             duration: 0.5
         })
     },[navIsOpen])
@@ -22,7 +22,7 @@ function NavigationLink(props) {
 
   return (
     <React.Fragment>
-         <a  href={item.link} className={`menu-link`}> 
+         <a onClick={toggle}  href={item.link} className={`menu-link`}> 
          <li>
             <div className="fill-link"></div>
             {item.content}

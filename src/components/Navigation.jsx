@@ -8,8 +8,8 @@ import gsap from 'gsap'
 function Navigation(props) {
 
     const [isMobile, setIsMobile] = useState(false)
-    const {navIsOpen} = props
-    const links = [{id:1,content:"About me", link:""},{id:2,content:"My Work", link:""},{id:3,content:"Skills", link:""},{id:4,content:"Contact", link:""},]
+    const {navIsOpen, toggle} = props
+    const links = [{id:1,content:"About me", link:"#about"},{id:2,content:"My Work", link:"#work"},{id:3,content:"Skills", link:"#skills"},{id:4,content:"Contact", link:"#contact"},]
 
     useEffect( () => {
       window.innerWidth >= 900 ? setIsMobile(false) : setIsMobile(true)
@@ -19,14 +19,14 @@ function Navigation(props) {
     useEffect( () => {
       gsap.to('.menu-items', {
         opacity:1,
-        delay:isMobile? 0.2 : 0.75,
+        delay:isMobile? 0.2 : 0.35,
 
       })
 
     },[navIsOpen])
 
     const renderLinks = links.map((item, index) => {
-        return <NavigationLink isMobile={isMobile} navIsOpen={navIsOpen} item={item} key={index} />
+        return <NavigationLink toggle={toggle} isMobile={isMobile} navIsOpen={navIsOpen} item={item} key={index} />
     })
 
 
@@ -59,7 +59,7 @@ function Navigation(props) {
 
   return (
     <div style={navIsOpen ? mountedStyle : unmountedStyle} className='navigation'>    
-       <MenuGridBg navIsOpen={navIsOpen} />
+       <MenuGridBg isMobile={isMobile} navIsOpen={navIsOpen} />
         {navIsOpen && <div className='menu-items'>
             <ul >
                {renderLinks}

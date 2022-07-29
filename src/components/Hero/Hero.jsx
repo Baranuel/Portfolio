@@ -22,7 +22,7 @@ function Hero() {
                 <h3>HELLO FROM SAMUEL</h3>
                 <h1>FRONT-<br></br>END</h1>
                 <p>I am a creative Developer with passion for building eye-catching products</p>
-                <button className='primary-button'>My Work</button>
+                <a href="#work"><button className='primary-button'>  My Work</button> </a>
             </div>
             <div className='introduction-images'>
               {imageDivisions }

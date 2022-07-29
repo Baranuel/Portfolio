@@ -5,17 +5,9 @@ import anime from 'animejs'
 
 function MenuGridBg(props) {
 
-    const {navIsOpen} = props
+    const {navIsOpen, isMobile} = props
 
-    const colors = [
-        "rgb(252, 195, 115)",
-        "rgb(255, 161, 170)",
-       " rgb(197, 142, 234)",
-       "rgb(136, 167, 238)",
-       " rgb(240, 132, 220)",
-       " rgb(240, 132, 220)",
-    ]
-
+ 
     const [count, setCount] = useState(-1)
 
     const [columns, setColumns] = useState(Math.floor( document.documentElement.clientWidth/ 50))
@@ -61,7 +53,7 @@ function MenuGridBg(props) {
         anime({
             targets: '.tile-menu',
             opacity: navIsOpen? 1 : 0,
-            delay: anime.stagger(20,{
+            delay: anime.stagger(isMobile ? 30 : 10,{
                 grid: [columns, rows],
                 from:columns - 1
             })

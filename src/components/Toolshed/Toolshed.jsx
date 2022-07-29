@@ -62,11 +62,11 @@ function Toolshed() {
 
   const verticalTranslate = () => {
       
-    const cardsCover = gsap.utils.toArray('.cover-mobile')
-    const cardsContent = gsap.utils.toArray('.content-mobile')
+    const cardsCoverM = gsap.utils.toArray('.cover-mobile')
+    const cardsContentM = gsap.utils.toArray('.content-mobile')
 
 
-    cardsCover.forEach(card => {
+    cardsCoverM.forEach(card => {
       gsap.fromTo(card,{
         yPercent: 50
       },
@@ -83,14 +83,14 @@ function Toolshed() {
       })
     })
 
-    cardsContent.forEach(card => {
+    cardsContentM.forEach(cardC => {
 
-      gsap.fromTo(card,{
+      gsap.fromTo(cardC,{
         yPercent: -50
       },
       {
         scrollTrigger: {
-          trigger: card,
+          trigger: cardC,
           start:"top 25%",
           scrub:true,
           end:"top 25%",
@@ -125,8 +125,8 @@ function Toolshed() {
 
 
   return (
-    <div className='front-page-toolshed'>
-        <div className='toolshed-wrapper'>
+    <div id="skills"className='front-page-toolshed'>
+        <div  className='toolshed-wrapper'>
           {windowWidth > 874 ?
           <React.Fragment>
           <SkillCard skills={skills.experienced} image={cardCover1} title={"Experienced"} />

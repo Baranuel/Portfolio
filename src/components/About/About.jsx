@@ -76,9 +76,9 @@ function About() {
 
 
   return (
-    <div className='front-page-about'>
+    <div id="about" className='front-page-about'>
         <GridBg selectedItem={selectedItem} />
-        <div className="display-about-wrapper">
+        <div  className="display-about-wrapper">
         <div className='about-get-to-know-me'>
                 <h1 >Get to know me</h1>
                 <p>Essentially I am about 4 things</p>
