@@ -21,7 +21,7 @@ const projects = [
     {
         id:2,
         title:"Bobeh-blokhus",
-        description:" the goal of the redesign was to unify different housings, create updatable content through CMS,and visually represent their values",
+        description:" The goal of the redesign was to unify different housings, create updatable content through CMS and visually represent client's values",
         type:"Website, CMS",
         time_line: 4,
         technology:["Holy-trinity", "Laravel-blade", "PHP","WordPress"],
@@ -32,7 +32,7 @@ const projects = [
     {
         id:3,
         title:"React-todo",
-        description:"A fun side project for practicing state and hooks in React, an elaborate todo-application",
+        description:"A fun side project for practicing state and hooks in React. An elaborate todo-application",
         type:"Web-app",
         time_line: 1,
         technology:["Holy-trinity", "React"],
@@ -44,7 +44,7 @@ const projects = [
     {
         id:4,
         title:"Nuxt-movie-database",
-        description:"In this project I was using Nuxt framework to fetch the data form an open source movie API. You can search for any movie you think of and also discover new ones through similar recommendation",
+        description:"In this project I was using Nuxt framework to fetch the data form an open source movie API. You can search for any movie you think of and discover new ones through recommendations",
         type:"Website",
         time_line: 4,
         technology:["Holy-trinity"],
@@ -56,7 +56,7 @@ const projects = [
     {
         id:5,
         title:"Particle clock",
-        description:"With Three-JS I was able to re-create shape resembling a ring purely with particles,  and with vanilla Java-Script I implemented the logic of functioning clock.",
+        description:"With ThreeJs I was able to re-create shape resembling a ring purely with particles,  and with vanilla Java-Script I implemented the logic of functioning clock.",
         type:"WebGL",
         time_line: 1,
         technology:["Three-js","Java-Script"],
