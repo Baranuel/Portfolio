@@ -13,28 +13,28 @@ function About() {
             item:"Development",
             isSelected:false,
             image:imagesWhite[1].image,
-            text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing my self in the weird quirky-ness of front-end development."
+            text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing my self in the weird quirkiness of front-end development."
         },
         {   
             id: 2,
             item:"Music",
             isSelected:false,
             image:imagesWhite[2].image,
-            text: "I am a very big fan of music, it is the single most thing I can not imagine living without. for the Genres im into Rock, Disco and a heavy whiff of EDM."
+            text: "I am a very big fan of music, it is the single thing I can not imagine living without. For the genres, im into Rock, Disco and a heavy whiff of EDM."
         },
         {
             id: 3,
             item:"Games", 
             isSelected:false,
             image:imagesWhite[0].image,
-            text: "Rogue-like, rogue-lite, MMO-RPG's, alot of my motivation to figure out coding challenges comes from perseverence acquired ftom these types of games :)  "
+            text: "Rogue-like, rogue-lite, MMO-RPG's... A lot of my motivation to achieve goals I deem important, come exactly from these types of games :)  "
         },
         {
             id: 4,
             item:"Fantasy",
             isSelected:false,
             image:imagesWhite[3].image,
-            text:"Either reading Paolini, or simply watching Lord of the rings, I'm in as long as it has dwarves. "
+            text:"Either reading Paolini, or simply watching Lord of the rings, I'm in... as long as it has dwarves. "
         }
     ]
     
@@ -43,7 +43,7 @@ function About() {
         item:"Development",
         isSelected:false,
         image:images[1].image,
-        text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing my self in the weird quirky-ness of front-end development"
+        text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing my self in the weird quirkiness of front-end development."
         })
 
     const selectActiveItem = id => {
