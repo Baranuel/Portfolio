@@ -13,7 +13,7 @@ function About() {
             item:"Development",
             isSelected:false,
             image:imagesWhite[1].image,
-            text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing my self in the weird quirkiness of front-end development."
+            text:"I started studying UX/UI Design in 2021 and it didn't take long for me to start losing myself in the weird quirkiness of front-end development."
         },
         {   
             id: 2,
