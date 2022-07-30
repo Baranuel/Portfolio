@@ -20,14 +20,14 @@ function About() {
             item:"Music",
             isSelected:false,
             image:imagesWhite[2].image,
-            text: "I am a very big fan of music, it is the single thing I can not imagine living without. For the genres, im into Rock, Disco and a heavy whiff of EDM."
+            text: "I am a very big fan of music.It is the single thing I can not imagine living without. For the genres, im into Rock, Disco and a heavy whiff of EDM."
         },
         {
             id: 3,
             item:"Games", 
             isSelected:false,
             image:imagesWhite[0].image,
-            text: "Rogue-like, rogue-lite, MMO-RPG's... A lot of my motivation to achieve goals I deem important, come exactly from these types of games :)  "
+            text: "Rogue-like, rogue-lite, MMO-RPG's... A lot of my motivation to achieve goals I deem important comes exactly from these types of games :)  "
         },
         {
             id: 4,
