@@ -84,7 +84,7 @@ function Work() {
                     <h2 className='title'>{selectedProject.title}</h2>
                     <div className='links-div'>
                      <a className='link' href={selectedProject.link} target="blank">Live preview</a>
-                    <a className='case-link' href="/"> Case study</a>
+                    <a className='case-link' href={selectedProject.github} target="blank"> Github</a>
                     </div>
                     </div>
                     <p className='description'>{selectedProject.description}</p>

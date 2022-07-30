@@ -16,7 +16,7 @@ function Hero() {
 
   
   return (
-    <div className='front-page-hero'>
+    <div id="hero" className='front-page-hero'>
        <div className='front-page-hero-introduction'>
             <div className='introduction-text'>
                 <h3>HELLO FROM SAMUEL</h3>

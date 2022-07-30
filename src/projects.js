@@ -15,6 +15,7 @@ const projects = [
         technology:["Holy-trinity", "Vue.js"],
         role:["UX/UI", "Front-end"],
         link:"https://modul-foto.vercel.app/#/",
+        github:"https://github.com/Baranuel/modul-foto",
         image:image
     },
     {
@@ -24,6 +25,7 @@ const projects = [
         type:"Website, CMS",
         time_line: 4,
         technology:["Holy-trinity", "Laravel-blade", "PHP","WordPress"],
+        github:"https://github.com/Baranuel/Bobeh-Blokhus",
         role:["UX/UI", "Front-end"],
         image:bobeh
     },
@@ -36,28 +38,31 @@ const projects = [
         technology:["Holy-trinity", "React"],
         role:["Front-end"],
         link:"https://react-todo-brutalism.vercel.app/",
+        github:"https://github.com/Baranuel/React-Todo-Brutalism",
         image:todo
     },
     {
         id:4,
         title:"Nuxt-movie-database",
-        description:"About the project and the client",
+        description:"In this project I was using Nuxt framework to fetch the data form an open source movie API. You can search for any movie you think of and also discover new ones through similar recommendation",
         type:"Website",
         time_line: 4,
         technology:["Holy-trinity"],
         role:["UX/UI", "Front-end"],
         link: "https://nuxtjs-chi-one-65.vercel.app/",
+        github:"https://github.com/Baranuel/Nuxt-movie-app",
         image:movieDb
     },
     {
         id:5,
         title:"Particle clock",
-        description:"About the project and the client",
+        description:"With Three-JS I was able to re-create shape resembling a ring purely with particles,  and with vanilla Java-Script I implemented the logic of functioning clock.",
         type:"WebGL",
         time_line: 1,
         technology:["Three-js","Java-Script"],
         role:["Front-end"],
         link: "https://particle-clock.vercel.app/",
+        github:"https://github.com/Baranuel/particle-clock",
         image:clock
     },
 ]

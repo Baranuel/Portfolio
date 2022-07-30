@@ -76,7 +76,6 @@ function Toolshed() {
           start:"top 10%",
           scrub:true,
           end:"top 10%",
-
         },
         yPercent: 35,
         boxShadow: "4px 0 8px -2px rgb(24, 24, 24)"
@@ -86,16 +85,18 @@ function Toolshed() {
     cardsContentM.forEach(cardC => {
 
       gsap.fromTo(cardC,{
-        yPercent: -50
+        yPercent: -50,
+        duration: 0.1
       },
       {
         scrollTrigger: {
           trigger: cardC,
-          start:"top 25%",
+          start:"top 45%",
           scrub:true,
-          end:"top 25%",
+          end:"top 45%",
         },
         yPercent: 25,
+        duration: 0.1
 
 
       })

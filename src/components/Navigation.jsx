@@ -3,6 +3,8 @@ import React, {useState,useEffect} from 'react'
 import MenuGridBg from './MenuGridBg'
 import NavigationLink from './NavigationLink'
 
+import house from '../assets/images/house-solid.svg'
+
 import gsap from 'gsap'   
 
 function Navigation(props) {
@@ -63,6 +65,9 @@ function Navigation(props) {
         {navIsOpen && <div className='menu-items'>
             <ul >
                {renderLinks}
+               <a onClick={toggle} href="#hero">
+                <img className='house-button' src={house} alt="" />
+               </a>
                {/* <div className='menu-pattern'></div> */}
             </ul>
         </div> } 
