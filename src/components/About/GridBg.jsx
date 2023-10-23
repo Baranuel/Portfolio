@@ -38,7 +38,7 @@ function GridBg(props) {
         
         window.addEventListener('resize', updateSize)
         return window.removeEventListener('resize', updateSize)
-    },[])
+    },[columns, rows])
 
     useEffect(() => {
         document.documentElement.style.setProperty('--colsCount', columns)
@@ -90,7 +90,7 @@ function GridBg(props) {
     const createGrid = createTiles(tiles)
 
   return (
-    <div  className='grid-bg'>
+    <div  className='grid-bg bg-default'>
         {createGrid}
     </div>
   )
